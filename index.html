@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+    // Prevent the browser from restoring scroll/hash position automatically
+    history.scrollRestoration = 'manual';
+    if (location.hash) {
+      history.replaceState(null, '', location.pathname + location.search);
+    }
+  </script>  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AJ — Portfolio (Sunset)</title>
+  <meta name="description" content="Portfolio template with Experience and hero headshot" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header id="site-header" class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#home"><span class="brand__logo">Your Name</span><span class="brand__dot"></span></a>
+
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <nav id="site-nav" class="nav">
+        <ul id="tabs" class="nav__list">
+          <li><a href="#home" data-target="#home" class="nav__link active">Home</a></li>
+          <li><a href="#about" data-target="#about" class="nav__link">About</a></li>
+          <li><a href="#experience" data-target="#experience" class="nav__link">Experience</a></li>
+          <li><a href="#projects" data-target="#projects" class="nav__link">Projects</a></li>
+          <li><a href="#contact" data-target="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- Hero -->
+    <section class="section hero" aria-label="Hero" data-reveal>
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1 class="hero__title">Building useful things for the web.</h1>
+          <p class="hero__subtitle">CS student & full-stack dev focused on Java / Spring Boot and crisp, accessible frontends.</p>
+          <div class="hero__cta">
+            <a class="btn" href="#experience">See Experience</a>
+            <a class="btn btn--ghost" href="#projects">Browse Projects</a>
+          </div>
+        </div>
+
+        <img src="360_F_464874339_Rc7McGaz327ljzgnWgke4crdDAdI2Yu2 copy.jpg" alt="Headshot" style="width:300px;height:300px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);box-shadow:0 0 25px rgba(124,156,255,.35)">
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section section--alt" data-reveal>
+      <div class="container narrow">
+        <h2 class="section__title">About</h2>
+        <p class="lead">
+          I like taking ideas from scribbles to shipped. On the backend I’m comfy with <strong>Java + Spring Boot</strong>.
+          On the frontend I keep it fast, responsive, and readable. I lead and collaborate through my campus CS/AI club and ship
+          projects that people actually use.
+        </p>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section" data-reveal>
+      <div class="container">
+        <h2 class="section__title">Experience</h2>
+
+        <div class="timeline">
+          <article class="t-item card">
+            <div class="t-meta">
+              <span class="t-role">Backend Developer</span>
+              <span class="t-time">2024 – 2025</span>
+            </div>
+            <h3 class="t-org">Infix → Postfix Service</h3>
+            <ul class="t-bullets">
+              <li>Designed a Spring Boot API for expression parsing, persisted history in PostgreSQL.</li>
+              <li>Exposed endpoints for parse-tree JSON visualizations.</li>
+              <li>Dockerized app and deployed on Render with health checks.</li>
+            </ul>
+          </article>
+
+          <article class="t-item card">
+            <div class="t-meta">
+              <span class="t-role">Full-Stack Lead</span>
+              <span class="t-time">2024 – Present</span>
+            </div>
+            <h3 class="t-org">CS/AI Club Website</h3>
+            <ul class="t-bullets">
+              <li>Built static site with events, team profiles, and a mobile-first nav.</li>
+              <li>Integrated Google Calendar and managed contributors.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section section--alt" data-reveal>
+      <div class="container">
+        <h2 class="section__title">Projects</h2>
+        <div class="projects">
+          <article class="project card">
+            <h3 class="project__title">Employee Manager</h3>
+            <p class="project__desc">Servlet/JSP app migrated to Postgres, deployed with Docker on Render.</p>
+          </article>
+          <article class="project card">
+            <h3 class="project__title">Parse Tree Visualizer</h3>
+            <p class="project__desc">Frontend renders operator trees from JSON output by Spring Boot API.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section" data-reveal>
+      <div class="container narrow">
+        <h2 class="section__title">Contact</h2>
+        <form class="form" onsubmit="return false">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" required />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" required></textarea>
+          </div>
+          <button class="btn" id="send-btn">Send</button>
+          <p id="form-status" class="form__status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> AJ — Made at sunset</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
